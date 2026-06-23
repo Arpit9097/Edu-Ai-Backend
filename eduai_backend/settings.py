@@ -102,7 +102,7 @@ WSGI_APPLICATION = "eduai_backend.wsgi.application"
 # DATABASE
 # ------------------------------------------------------------------------------
 DATABASES = {
-    "default": dj_database_url.config(default=os.getenv("postgresql://postgres:Arpitsing9097@db.fnepveueegmmwszzfcvm.supabase.co:5432/postgres"))
+    "default": dj_database_url.config(default=os.getenv("postgresql://postgres.fnepveueegmmwszzfcvm:Arpitsingh9097@aws-1-ap-northeast-2.pooler.supabase.com:5432/postgres"))
 }
 # ------------------------------------------------------------------------------
 # AUTH
