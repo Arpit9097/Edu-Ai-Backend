@@ -7,6 +7,7 @@ import os
 from pathlib import Path
 from datetime import timedelta
 import dotenv
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -101,16 +102,8 @@ WSGI_APPLICATION = "eduai_backend.wsgi.application"
 # DATABASE
 # ------------------------------------------------------------------------------
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.getenv("DB_NAME", "eduai"),
-        "USER": os.getenv("DB_USER", "postgres"),
-        "PASSWORD": os.getenv("DB_PASSWORD", "postgres"),
-        "HOST": os.getenv("DB_HOST", "localhost"),
-        "PORT": os.getenv("DB_PORT", "5432"),
-    }
+    "default": dj_database_url.config(default=os.getenv("postgresql://postgres:Arpitsingh@1234@db.fnepveueegmmwszzfcvm.supabase.co:5432/postgres"))
 }
-
 # ------------------------------------------------------------------------------
 # AUTH
 # ------------------------------------------------------------------------------
